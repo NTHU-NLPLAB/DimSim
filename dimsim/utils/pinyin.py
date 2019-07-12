@@ -41,10 +41,10 @@ class Pinyin:
         if 'v' in self.vowel:
             self.vowel = self.vowel.replace("v", "u:")
             
-        if self.consonant is None or self.consonant is "":
+        if self.consonant is None or self.consonant == "":
             self.consonant = ""
             return
-        if self.consonant is "y":
+        if self.consonant == "y":
             if self.vowel in yVowels:
                 if "u:" not in self.vowel:
                     self.vowel = self.vowel.replace("u","u:")
@@ -55,22 +55,22 @@ class Pinyin:
                 self.vowel = self.vowel.replace("ii","i")
             self.consonant=""
         
-        if self.consonant is "w":
+        if self.consonant == "w":
             self.vowel="u"+self.vowel
             self.vowel=self.vowel.replace("uuu","u")
             self.vowel=self.vowel.replace("uu","u")
             self.consonant = ""
         
-        if (self.consonant in tconsonant) and (self.vowel is "u") or (self.vowel is "v"):
+        if (self.consonant in tconsonant) and (self.vowel == "u") or (self.vowel == "v"):
             self.vowel="u:"
         
-        if self.vowel is "iou":
+        if self.vowel == "iou":
             self.vowel = "iu"
         
-        if self.vowel is "uei":
+        if self.vowel == "uei":
             self.vowel = "ui"
         
-        if self.vowel is "uen":
+        if self.vowel == "uen":
             self.vowel = "un"
 
 def load_pinying_to_simplified():

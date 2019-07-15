@@ -37,7 +37,7 @@ class Pinyin:
     def pinyinRewrite(self):
         import re
         yVowels = {"u","ue","uan","un","u:","u:e","u:an","u:n"}
-        tconsonant = {"j","g","x"}
+        tconsonant = {"j","q","x"}
         if 'v' in self.vowel:
             self.vowel = self.vowel.replace("v", "u:")
             

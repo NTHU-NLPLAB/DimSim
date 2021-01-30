@@ -86,7 +86,7 @@ def get_candidates(sentence, mode="simplified", theta=1):
         searchKey = ""
         for i in combination:
             searchKey = searchKey + i.toStringWithTone().replace("None","") + " "
-        if mode is "simplified":
+        if mode == "simplified":
             if searchKey.strip() in pinyin_to_simplified:
                 candidates+=pinyin_to_simplified[searchKey.strip()]
         else:
@@ -145,7 +145,7 @@ def _get_vowel_candids(theta, word_py):
     return res
 
 def _populate_double_consonants_map():
-    if len(doubleConsonantsMap) is not 0:
+    if len(doubleConsonantsMap) != 0:
         return
     hmCdouble = consonantMap
     for consonant in hmCdouble:
@@ -155,7 +155,7 @@ def _populate_double_consonants_map():
         doubleConsonantsMap[hmCdouble[consonant]].append(consonant)
         
 def _populate_double_vowels_map():
-    if len(doubleVowelsMap) is not 0:
+    if len(doubleVowelsMap) != 0:
         return
     hmVdouble = vowelMap
     for vowel in hmVdouble:

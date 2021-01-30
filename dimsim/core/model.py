@@ -102,7 +102,7 @@ def _get_close_pinyin_candids(word, theta=2):
     
     cCandids = _get_consonant_candids(theta, word_py)
     for i in range(len(cCandids)):
-        if cCandids[i] == word_py.consonant:
+        if cCandids[i] == word_py.consonant or cCandids[i] == '__v':
             continue
         for j in range(1,5,1):
             newPy = cCandids[i]+word_py.vowel+str(j)
